@@ -1,0 +1,60 @@
+include ../../components/icon/icon.pug
+
+mixin services
+  -
+    const items = [
+      {
+        icon: 'pen',
+        title: 'Custom Design',
+        description:
+          'Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.',
+      },
+      {
+        icon: 'bulb',
+        title: 'Inovative Ideas',
+        description:
+          'Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.',
+      },
+      {
+        icon: 'heart',
+        title: 'Love Is The Answer',
+        description:
+          'Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.',
+      },
+      {
+        icon: 'smartphone',
+        title: 'Responsive Layout',
+        description:
+          'Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.',
+      },
+      {
+        icon: 'bubble',
+        title: '24 / 7 Support',
+        description:
+          'Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .',
+      },
+      {
+        icon: 'star',
+        title: 'Feel Like A Star',
+        description:
+          'Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.',
+      },
+    ];
+
+  section.services&attributes(attributes)
+    .wrapper.services__wrapper
+      h2.services__title Our Services
+      p.services__description.
+        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+      ul.services__list
+        each item in items
+          li.service.services__item
+            .service__icon-wrapper
+              +icon(item.icon).service__icon(
+                class=`service__icon_${item.icon}`,
+                width='32',
+                height='32'
+              )
+            .service__description-wrapper
+              h3.service__title= item.title
+              p.service__description= item.description

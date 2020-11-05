@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "@prettier/plugin-pug": "^1.1.0",
+    "@prettier/plugin-xml": "^0.7.0",
+    "gh-pages": "^2.2.0",
+    "parcel-bundler": "^1.12.0",
+    "postcss": "^7.0.0",
+    "postcss-import": "^12.0.0",
+    "postcss-nested": "^4.2.0",
+    "prettier": "^1.19.0",
+    "pug": "^2.0.0",
+    "pug-lint": "^2.6.0",
+    "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0"
+  },
+  "name": "singolo",
+  "private": true,
+  "scripts": {
+    "build": "npm run clean && parcel build --public-url ./ ./src/*.pug",
+    "clean": "rm --recursive --force ./dist",
+    "deploy": "gh-pages --dist ./dist --message deploy",
+    "dev": "npm run clean && parcel --port 3000 ./src/*.pug",
+    "predeploy": "npm run build"
+  }
+}

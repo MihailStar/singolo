@@ -1,0 +1,15 @@
+extends ./blocks/main/main.pug
+include ./blocks/parts/contacts/contacts.pug
+include ./blocks/parts/footer/footer.pug
+
+block variables
+  -
+    const bodyClasses = 'singolo';
+    const pageTitle = 'Singolo 3';
+
+block head
+  link(href='./singolo3.css', rel='stylesheet')
+
+block body
+  +contacts
+  +footer

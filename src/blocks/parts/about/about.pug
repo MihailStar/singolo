@@ -1,0 +1,48 @@
+include ../../components/social/social.pug
+
+mixin about
+  -
+    const items = [
+      {
+        path: './assets/images/content/about-1',
+        alt: 'About',
+        title: 'Adam Jensen',
+        description:
+          'Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.',
+      },
+      {
+        path: './assets/images/content/about-2',
+        alt: 'About',
+        title: 'Desmond Miles',
+        description:
+          'Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.',
+      },
+      {
+        path: './assets/images/content/about-3',
+        alt: 'About',
+        title: 'Scolara Visari',
+        description:
+          'Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.',
+      },
+    ];
+
+  section.about&attributes(attributes)
+    .wrapper.about__wrapper
+      h2.about__title About Us
+      p.about__description.
+        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+      ul.about__list
+        each item in items
+          li.member.about__item
+            picture
+              source(srcset=`${item.path}.webp`, type='image/webp')
+              source(srcset=`${item.path}.jpg`, type='image/jpeg')
+              img.member__image(
+                src=`${item.path}.jpg`,
+                width='300',
+                height='300',
+                alt=item.alt
+              )
+            h3.member__title= item.title
+            p.member__description= item.description
+            +social.member__social

@@ -1,0 +1,62 @@
+include ../../components/icon/icon.pug
+
+mixin contacts
+  -
+    const items = [
+      {
+        icon: 'location',
+        size: ['7', '11'],
+        title: 'Elm St. 14/05 Lost City',
+        href: 'javascript:void(0);',
+      },
+      {
+        icon: 'phone',
+        size: ['11', '11'],
+        title: '03528 331 86 35',
+        href: 'tel:+035283318635',
+      },
+      {
+        icon: 'mail',
+        size: ['13', '8'],
+        title: 'info@singolo.com',
+        href: 'mailto:info@singolo.com',
+      },
+    ];
+
+  section.contacts&attributes(attributes)
+    .wrapper.contacts__wrapper
+      h2.contacts__title Get a Quote
+      p.contacts__description.
+        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+      .contacts__row
+        form.form.contacts__form(action='/', method='post')
+          input.form__input(
+            type='text',
+            name='name',
+            placeholder='Name (Required)',
+            required
+          )
+          input.form__input(
+            type='email',
+            name='email',
+            placeholder='Email (Required)',
+            required
+          )
+          input.form__input(type='text', name='subject', placeholder='Subject')
+          textarea.form__input.form__input_textarea(
+            placeholder='Describe your project in detail...'
+          )
+          button.form__button(type='submit', aria-label='Submit')
+        .information.contacts__information
+          h3.information__title Contact Information
+          p.information__description.
+            Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
+          ul.information__list
+            each item in items
+              li.information__item
+                +icon(item.icon).information__icon(
+                  class=`information__icon_${item.icon}`,
+                  width=item.size[0],
+                  height=item.size[1]
+                )
+                a.information__link(href=item.href)= item.title

@@ -1,0 +1,21 @@
+mixin header
+  -
+    const items = [
+      { title: 'Home', isCurrent: true },
+      { title: 'Services' },
+      { title: 'Portfolio' },
+      { title: 'About' },
+      { title: 'Contact' },
+    ];
+
+  header.header&attributes(attributes)
+    .wrapper.header__wrapper
+      h1.logotype.header__logotype Singolo
+      nav.navigation.header__navigation
+        ul.navigation__list
+          each item in items
+            li.navigation__item
+              a.navigation__link(
+                class=item.isCurrent && 'navigation__link_current',
+                href=!item.isCurrent && 'javascript:void(0);'
+              )= item.title

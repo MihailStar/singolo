@@ -1,0 +1,25 @@
+extends ./blocks/main/main.pug
+include ./blocks/parts/header/header.pug
+include ./blocks/parts/slider/slider.pug
+include ./blocks/parts/services/services.pug
+include ./blocks/parts/portfolio/portfolio.pug
+include ./blocks/parts/about/about.pug
+include ./blocks/parts/contacts/contacts.pug
+include ./blocks/parts/footer/footer.pug
+
+block variables
+  -
+    const bodyClasses = 'singolo';
+    const pageTitle = 'Singolo';
+
+block head
+  link(href='./style.css', rel='stylesheet')
+
+block body
+  +header
+  +slider
+  +services
+  +portfolio
+  +about
+  +contacts
+  +footer

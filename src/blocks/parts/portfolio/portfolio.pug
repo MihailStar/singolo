@@ -1,0 +1,36 @@
+mixin portfolio
+  -
+    const buttons = [
+      { title: 'All', isCurrent: true },
+      { title: 'Web Design' },
+      { title: 'Graphic Design' },
+      { title: 'Artwork' },
+    ];
+    const items = Array.from({ length: 12 }, (_, index) => ({
+      path: `./assets/images/content/portfolio-${index + 1}`,
+      alt: 'Portfolio',
+    }));
+
+  section.portfolio&attributes(attributes)
+    .wrapper.portfolio__wrapper
+      h2.portfolio__title Portfolio
+      p.portfolio__description.
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+      .portfolio__row
+        each item in buttons
+          a.portfolio__button(
+            class=item.isCurrent && 'portfolio__button_current',
+            href=!item.isCurrent && 'javascript:void(0);'
+          )= item.title
+      ul.portfolio__list
+        each item in items
+          li.portfolio__item
+            picture
+              source(srcset=`${item.path}.webp`, type='image/webp')
+              source(srcset=`${item.path}.jpg`, type='image/jpeg')
+              img.portfolio__image(
+                src=`${item.path}.jpg`,
+                width='220',
+                height='187',
+                alt=item.alt
+              )

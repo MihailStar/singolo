@@ -1,0 +1,10 @@
+mixin icon(name)
+  -
+    const iconName = name.toLowerCase();
+    const isInline = false;
+
+  svg.icon(class=`icon_${iconName}`, aria-hidden='true', focusable='false')&attributes(attributes)
+    if isInline
+      use(href=`#icon-${iconName}`)/
+    else
+      use(href=`./assets/images/sprite.svg#icon-${iconName}`)/

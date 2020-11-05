@@ -1,0 +1,42 @@
+include ../../components/icon/icon.pug
+include ../../components/iphone/iphone.pug
+
+mixin slider
+  -
+    const items = [
+      {
+        path: './assets/images/content/slider-1',
+        width: '188',
+        height: '333',
+        alt: 'Slider',
+      },
+      {
+        path: './assets/images/content/slider-2',
+        width: '333',
+        height: '188',
+        alt: 'Slider',
+      },
+    ];
+
+  .slider&attributes(attributes)
+    .wrapper.slider__wrapper
+      ul.slider__list
+        li.slider__item
+          +iphone(items[0]).iphone_vertical.slider__iphone.slider__iphone_vertical
+          +iphone(items[1]).iphone_horizontal.slider__iphone.slider__iphone_horizontal
+      button.slider__button.slider__button_previous(
+        type='button',
+        aria-label='Previous'
+      )
+        +icon('chevron-left').slider__icon.slider__icon_previous(
+          width='20',
+          height='32'
+        )
+      button.slider__button.slider__button_next(
+        type='button',
+        aria-label='Next'
+      )
+        +icon('chevron-right').slider__icon.slider__icon_next(
+          width='20',
+          height='32'
+        )

@@ -1,0 +1,101 @@
+.iphone {
+  position: relative;
+  width: 214px;
+  height: 458px;
+  border-radius: 27px;
+  background-color: #f2f2f2;
+  box-shadow: 2px 2px 0 0 #ce5d56, 4px 4px 0 0 #ce5d56, 6px 6px 0 0 #ce5d56,
+    8px 8px 0 0 #ce5d56, 10px 10px 0 0 #ce5d56, 12px 12px 0 0 #ce5d56,
+    14px 14px 0 0 #ce5d56, 16px 16px 0 0 #ce5d56, 18px 18px 0 0 #ce5d56,
+    20px 20px 0 0 #ce5d56, 22px 22px 0 0 #ce5d56, 24px 24px 0 0 #ce5d56,
+    26px 26px 0 0 #ce5d56;
+
+  &__dot {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d8d8d8;
+    transform: translateX(-50%);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #eb5055;
+      content: '';
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  &__speaker {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    width: 36px;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #acacac;
+    transform: translateX(-50%);
+  }
+
+  &__screen {
+    position: absolute;
+    top: 62px;
+    left: 50%;
+    overflow: hidden;
+    width: 194px;
+    height: 338px;
+    border: 3px solid #c6c6c6;
+    border-radius: 4px;
+    background-color: #2d303a;
+    transform: translateX(-50%);
+  }
+
+  &__image {
+    vertical-align: middle;
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #fafafa;
+    transform: translateX(-50%);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #bababa;
+      border-radius: 4px;
+      content: '';
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  &_horizontal {
+    box-shadow: 2px -2px 0 0 #ce5d56, 4px -4px 0 0 #ce5d56, 6px -6px 0 0 #ce5d56,
+      8px -8px 0 0 #ce5d56, 10px -10px 0 0 #ce5d56, 12px -12px 0 0 #ce5d56,
+      14px -14px 0 0 #ce5d56, 16px -16px 0 0 #ce5d56, 18px -18px 0 0 #ce5d56,
+      20px -20px 0 0 #ce5d56, 22px -22px 0 0 #ce5d56, 24px -24px 0 0 #ce5d56,
+      26px -26px 0 0 #ce5d56;
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: 0 0;
+
+    & .iphone__image {
+      transform: rotate(-90deg) translateX(-100%);
+      transform-origin: 0 0;
+    }
+  }
+}

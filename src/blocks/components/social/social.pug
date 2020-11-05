@@ -1,0 +1,36 @@
+include ../icon/icon.pug
+
+mixin social
+  -
+    const items = [
+      {
+        icon: 'facebook',
+        size: ['8', '14'],
+        title: 'Facebook',
+      },
+      {
+        icon: 'google+',
+        size: ['14', '14'],
+        title: 'Google+',
+      },
+      {
+        icon: 'twitter',
+        size: ['14', '12'],
+        title: 'Twitter',
+      },
+      {
+        icon: 'linkedin',
+        size: ['14', '14'],
+        title: 'LinkedIn',
+      },
+    ];
+
+  ul.social&attributes(attributes)
+    each item in items
+      li.social__item
+        a.social__link(aria-label=item.title, href='javascript:void(0);')
+          +icon(item.icon).social__icon(
+            class=`social__icon_${item.icon}`,
+            width=item.size[0],
+            height=item.size[1]
+          )

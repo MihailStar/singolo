@@ -1,0 +1,10 @@
+include ../../components/social/social.pug
+
+mixin footer
+  footer.footer&attributes(attributes)
+    .wrapper.footer__wrapper
+      p.footer__copyright
+        span ©&nbsp;Copyright&nbsp;2013
+        span.footer__dot &nbsp;·&nbsp;
+        span by&nbsp;<a class='footer__link' href='javascript:void(0);'>PSDchat.com</a>
+      +social.footer__social

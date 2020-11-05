@@ -1,0 +1,8 @@
+@import './blocks/main/main.css';
+@import './blocks/parts/header/header.css';
+@import './blocks/parts/slider/slider.css';
+@import './blocks/parts/services/services.css';
+@import './blocks/parts/portfolio/portfolio.css';
+@import './blocks/parts/about/about.css';
+@import './blocks/parts/contacts/contacts.css';
+@import './blocks/parts/footer/footer.css';

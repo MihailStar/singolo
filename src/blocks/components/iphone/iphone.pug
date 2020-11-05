@@ -1,0 +1,15 @@
+mixin iphone(image)
+  .iphone&attributes(attributes)
+    .iphone__dot
+    .iphone__speaker
+    .iphone__screen
+      picture
+        source(srcset=`${image.path}.webp`, type='image/webp')
+        source(srcset=`${image.path}.jpg`, type='image/jpeg')
+        img.iphone__image(
+          src=`${image.path}.jpg`,
+          width=image.width,
+          height=image.height,
+          alt=image.alt
+        )
+    .iphone__button

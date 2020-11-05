@@ -1,0 +1,45 @@
+@import '../../components/social/social.css';
+
+.footer {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  background-color: #2d303a;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #666d89;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.75em;
+  }
+
+  &__dot {
+    color: #494e62;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration-color: transparent;
+    transition: 200ms;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+      color: #ffffff;
+      text-decoration-color: currentColor;
+    }
+  }
+
+  &__social {
+    color: #666d89;
+  }
+}
